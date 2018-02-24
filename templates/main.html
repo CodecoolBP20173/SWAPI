@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <style>
+        body {
+            background-image: url("http://rosskimes.net/images/blog//2016/12/apple-death-star-wallpaper//thats-no-moon.jpg");
+            background-repeat: no-repeat;
+            background-size: 40cm;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px black;
+        }
+
+        h1 {
+            color: white;
+        }
+    </style>
+    <script>
+        $("next").click(function (datas) {
+            $(this).slideDown();
+        });
+    </script>
+    <h1><strong>Star Wars API Planetary Stuff 'n Sheet</strong></h1>
+    <button type="button" class="btn btn-primary">Previous</button>
+    <button id="next" type="button" class="btn btn-primary">Next</button>
+    <a href="/login" id="login" role="button" class="btn btn-primary">Login</a>
+    <a href="/register" id="register" role="button" class="btn btn-primary">Register</a>
+
+    <br>
+    <div class="datas">
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th>Name</th>
+                <th>Diameter in KM</th>
+                <th>Climate</th>
+                <th>Terrain</th>
+                <th>Surface water %</th>
+                <th>Population</th>
+            </tr>
+            </thead>
+            <tbody id="datas">
+
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

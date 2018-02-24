@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form action="{{ url_for('register') }}" method="POST">
+        <label for="register_user_name">Login name</label>
+        <input type="text" id="register_user_name" name="register_user_name" class="login-input"><br>
+        <label for="register_password">Password</label>
+        <input type="password" id="register_password" name="register_password" class="login-input"><br>
+        <input type="submit" value="register" class="login-button"><br>
+    </form>
+{% endblock %}
