@@ -55,6 +55,3 @@ def logout():
     session.pop('user_name',None)
     return redirect(url_for('route_main'))
 
-if __name__ == '__main__':
-    app.run()
-
