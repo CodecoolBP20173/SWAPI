@@ -1,22 +1,21 @@
-# Creates a decorator to handle the database connection/cursor opening/closing.
-# Creates the cursor with RealDictCursor, thus it returns real dictionaries, where the column names are the keys.
 import os
 import psycopg2
 import psycopg2.extras
-import urllib.parse
+from random import randint
+import urllib
 
 
 def get_connection_string():
     urllib.parse.uses_netloc.append('postgres')
     url = urllib.parse.urlparse(os.environ.get('DATABASE_URL'))
-    return psycopg2.connect(
+    connection = psycopg2.connect(
         database=url.path[1:],
         user=url.username,
         password=url.password,
         host=url.hostname,
         port=url.port
     )
-
+    return connection
 
 def open_database():
     try:
